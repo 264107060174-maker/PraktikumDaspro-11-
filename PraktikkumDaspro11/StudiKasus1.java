@@ -1,7 +1,7 @@
 package PraktikkumDaspro11;
 import java.util.Scanner;
 
-public class StudiKasus1<presensi11> { 
+public class StudiKasus1 {
     public static void main(String[] args) {
         final int HARGA_CUP = 18000;
 
@@ -15,6 +15,14 @@ public class StudiKasus1<presensi11> {
 
         System.out.print("Masukkan uang bayar: ");
         uangBayar = input.nextInt();
+
+        if (jumlahCup <= 0 || uangBayar < 0) {
+            System.out.println("Jumlah cup harus lebih dari 0 dan uang bayar tidak boleh negatif.");
+            input.close();
+            return;
+        }
+
+        input.close();
 
         totalHarga = jumlahCup * HARGA_CUP;
         diskon = 0;
