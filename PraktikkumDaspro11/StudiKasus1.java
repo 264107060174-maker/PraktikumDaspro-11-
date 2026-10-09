@@ -4,6 +4,8 @@ import java.util.Scanner;
 public class StudiKasus1 {
     public static void main(String[] args) {
         final int HARGA_CUP = 18000;
+        final int BATAS_DISKON = 100000;
+        final int PERSENTASE_DISKON = 10;
 
         int jumlahCup, uangBayar;
         int totalHarga, diskon, totalBayar, kembalian, kurang;
@@ -27,8 +29,8 @@ public class StudiKasus1 {
         totalHarga = jumlahCup * HARGA_CUP;
         diskon = 0;
 
-        if (totalHarga >= 100000) {
-            diskon = totalHarga * 10 / 100;
+        if (totalHarga >= BATAS_DISKON) {
+            diskon = totalHarga * PERSENTASE_DISKON / 100;
         }
 
         totalBayar = totalHarga - diskon;
