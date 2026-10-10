@@ -6,6 +6,7 @@ public class StudiKasus2no11 {
         String jenisKegiatan;
         String statusDokumen;
         int jumlahDokumen;
+        String statusPengajuan;
 
         Scanner input = new Scanner(System.in);
 
@@ -28,32 +29,24 @@ public class StudiKasus2no11 {
         System.out.println("Jenis kegiatan\t: " + jenisKegiatan);
         System.out.println("Jumlah dokumen\t: " + jumlahDokumen);
 
+        statusPengajuan = "tidak lolos";
+
         if (jumlahDokumen < 1 || jumlahDokumen > 4) {
             System.out.println("Status\t\t: Dokumen tidak lengkap (kurang 1 dokumen). Dana pengajuan tidak diberikan.");
         } else {
-            if (jenisKegiatan.equalsIgnoreCase("BELMAWA") || jenisKegiatan.equalsIgnoreCase("BAKORMA") || jenisKegiatan.equalsIgnoreCase("Mandiri")) {
-                if (statusDokumen.equalsIgnoreCase("lolos")) {
+            if (statusDokumen.equalsIgnoreCase("lolos")) {
+                if (jenisKegiatan.equalsIgnoreCase("BELMAWA") || jenisKegiatan.equalsIgnoreCase("BAKORMA") || jenisKegiatan.equalsIgnoreCase("Mandiri")) {
                     if (jumlahDokumen == 1 || jumlahDokumen == 2 || jumlahDokumen == 3) {
-                        System.out.println("Status\t\t: lolos");
-                    } else {
-                        System.out.println("Status\t\t: tidak lolos");
+                        statusPengajuan = "lolos";
                     }
-                } else {
-                    System.out.println("Status\t\t: tidak lolos");
-                }
-            } else if (jenisKegiatan.equalsIgnoreCase("PKM")) {
-                if (statusDokumen.equalsIgnoreCase("lolos")) {
+                } else if (jenisKegiatan.equalsIgnoreCase("PKM")) {
                     if (jumlahDokumen == 1 || jumlahDokumen == 3) {
-                        System.out.println("Status\t\t: lolos");
-                    } else {
-                        System.out.println("Status\t\t: tidak lolos");
+                        statusPengajuan = "lolos";
                     }
-                } else {
-                    System.out.println("Status\t\t: tidak lolos");
                 }
-            } else {
-                System.out.println("Status\t\t: tidak lolos");
             }
+
+            System.out.println("Status\t\t: " + statusPengajuan);
         }
     }
 }
