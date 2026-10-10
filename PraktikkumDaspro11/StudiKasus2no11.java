@@ -32,7 +32,7 @@ public class StudiKasus2no11 {
             String statusPengajuan;
             if (jumlahDokumen < 4) {
                 statusPengajuan = "Dokumen tidak lengkap (kurang "
-                        + (4 - jumlahDokumen) + " dokumen). Dana penghargaan tidak diberikan.";
+                        + (4 - jumlahDokumen) + " dokumen). Dana pengajuan tidak diberikan.";
             } else if (jumlahDokumen > 4) {
                 statusPengajuan = "Jumlah dokumen melebihi ketentuan. Dana penghargaan tidak diberikan.";
             } else if (jenisKegiatan.equalsIgnoreCase("PKM")) {
